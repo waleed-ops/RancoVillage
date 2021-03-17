@@ -24,6 +24,8 @@ class Ktextfielad extends StatelessWidget {
             return errorMSG(hint);
           }
         },
+        obscureText: hint=='الباسورد لو سمحت'?true:false,
+keyboardType: TextInputType.emailAddress,
         style: TextStyle(color: KmainColor),
         cursorColor: KmainColor,
         decoration:InputDecoration(

@@ -6,6 +6,8 @@ import 'Widgets.dart';
 class SignupScreen extends StatelessWidget {
   final GlobalKey<FormState> _globalKey=GlobalKey<FormState>();
   static String id = 'SignUpScreen';
+  String email,password;
+
   @override
   Widget build(BuildContext context) {
     double hight = MediaQuery.of(context).size.height;
@@ -25,6 +27,7 @@ class SignupScreen extends StatelessWidget {
               icon: Icons.person,
             ),
             Ktextfielad(
+
               hint: 'ايميلك يا الطيب ',
               icon: Icons.email_sharp,
             ),
