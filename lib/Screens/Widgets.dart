@@ -3,6 +3,7 @@ import 'package:flutter_ecommerce123/commoncode/const.dart';
 class Ktextfielad extends StatelessWidget {
   final  String hint;
   final IconData icon;
+  final Function onclick;
   String errorMSG (String str)
   {
     switch (hint){
@@ -12,7 +13,7 @@ class Ktextfielad extends StatelessWidget {
 
     }
   }
-  Ktextfielad({@required this.hint,@required this.icon});
+  Ktextfielad({@required this.onclick,@required this.hint,@required this.icon});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,6 +25,7 @@ class Ktextfielad extends StatelessWidget {
             return errorMSG(hint);
           }
         },
+        onSaved: onclick,
         obscureText: hint=='الباسورد لو سمحت'?true:false,
 keyboardType: TextInputType.emailAddress,
         style: TextStyle(color: KmainColor),

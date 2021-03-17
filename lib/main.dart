@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce123/Screens/SignUp_Screen.dart';
 import 'Screens/LoginPage.dart';
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {

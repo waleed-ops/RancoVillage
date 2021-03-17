@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce123/Screens/LoginPage.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
-
+import 'package:flutter_ecommerce123/services/Auth.dart';
 import 'Widgets.dart';
 
 class SignupScreen extends StatelessWidget {
   final GlobalKey<FormState> _globalKey=GlobalKey<FormState>();
   static String id = 'SignUpScreen';
-  String email,password;
+  final _auth=Auth();
+  String _email,_password;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,9 @@ class SignupScreen extends StatelessWidget {
               icon: Icons.person,
             ),
             Ktextfielad(
-
+              onclick: (value){
+                _email=value;
+              },
               hint: 'ايميلك يا الطيب ',
               icon: Icons.email_sharp,
             ),
@@ -35,6 +39,9 @@ class SignupScreen extends StatelessWidget {
             //   height: hight * .0,
             // ),
             Ktextfielad(
+              onclick: (value){
+                _password=value;
+              },
               hint: 'الباسورد لو سمحت',
               icon: Icons.lock_sharp,
             ),
@@ -49,8 +56,15 @@ class SignupScreen extends StatelessWidget {
               // ignore: deprecated_member_use
               child: FlatButton(
                 height: hight * .08,
-                onPressed: () {
-                  _globalKey.currentState.validate();
+                onPressed: () async{
+                  
+                  if(_globalKey.currentState.validate()){
+                    _globalKey.currentState.save();
+                    print(_email);
+                    print(_password);
+                    final authResult =await _auth.SignUP(_email,_password);
+
+                  }
                 },
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -72,7 +86,7 @@ class SignupScreen extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    // Navigator.pushNamed(context, SignupScreen.id);
+                    Navigator.pushNamed(context, LoginScreen.id);
                   },
                   child: Text(
                     'دخول',

@@ -5,11 +5,13 @@ import 'package:flutter_ecommerce123/commoncode/const.dart';
 import 'package:flutter/widgets.dart';
 import 'SignUp_Screen.dart';
 import 'Widgets.dart';
+import 'package:flutter_ecommerce123/services/Auth.dart';
 
 class LoginScreen extends StatelessWidget {
   static String id = 'MainScreen';
   final GlobalKey<FormState> _globalKey=GlobalKey<FormState>();
-
+  final _auth=Auth();
+  String _email,_password;
   @override
   Widget build(BuildContext context) {
     double hight = MediaQuery.of(context).size.height;
@@ -22,6 +24,9 @@ class LoginScreen extends StatelessWidget {
           children: [
             ReImage(hight: hight),
             Ktextfielad(
+              onclick: (value){
+                _email=value;
+              },
               hint: 'ايميلك يا الطيب ',
               icon: Icons.email_sharp,
             ),
@@ -29,6 +34,9 @@ class LoginScreen extends StatelessWidget {
             //   height: hight * .0,
             // ),
             Ktextfielad(
+              onclick: (value){
+                _password=value;
+              },
               hint: 'الباسورد لو سمحت',
               icon: Icons.lock_sharp,
             ),
@@ -43,8 +51,15 @@ class LoginScreen extends StatelessWidget {
               // ignore: deprecated_member_use
               child: FlatButton(
                 height: hight * .08,
-                onPressed: () {
-                  _globalKey.currentState.validate();
+                onPressed: () async{
+
+                  if(_globalKey.currentState.validate()){
+                    _globalKey.currentState.save();
+                    print(_email+'success');
+                    print(_password+'success');
+                    final authResult =await _auth.SignIn(_email,_password);
+
+                  }
                 },
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
