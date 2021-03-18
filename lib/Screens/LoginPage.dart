@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'SignUp_Screen.dart';
 import 'Widgets.dart';
 import 'package:flutter_ecommerce123/services/Auth.dart';
-
+import '';
 class LoginScreen extends StatelessWidget {
   static String id = 'MainScreen';
   final GlobalKey<FormState> _globalKey=GlobalKey<FormState>();
@@ -55,9 +55,18 @@ class LoginScreen extends StatelessWidget {
 
                   if(_globalKey.currentState.validate()){
                     _globalKey.currentState.save();
-                    print(_email+'success');
-                    print(_password+'success');
-                    final authResult =await _auth.SignIn(_email,_password);
+
+                    try {
+                      final authResult = await _auth.SignIn(_email, _password);
+                      Navigator.pushNamed(context, LoginScreen.id);
+                    }catch(e){
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        duration: Duration(seconds: 5),
+                        content: Text(e.message),
+                      ));
+                    }
+
+
 
                   }
                 },

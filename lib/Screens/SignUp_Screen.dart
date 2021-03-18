@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_ecommerce123/Screens/LoginPage.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
 import 'package:flutter_ecommerce123/services/Auth.dart';
 import 'Widgets.dart';
 
 class SignupScreen extends StatelessWidget {
-  final GlobalKey<FormState> _globalKey=GlobalKey<FormState>();
+  final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
   static String id = 'SignUpScreen';
-  final _auth=Auth();
-  String _email,_password;
+  final _auth = Auth();
+  String _email, _password;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class SignupScreen extends StatelessWidget {
         key: _globalKey,
         child: ListView(
           children: [
-           ReImage(hight: hight),
+            ReImage(hight: hight),
             // Padding(
             //   padding: EdgeInsets.only(top: hight * .29),
             // ),
@@ -29,8 +30,8 @@ class SignupScreen extends StatelessWidget {
               icon: Icons.person,
             ),
             Ktextfielad(
-              onclick: (value){
-                _email=value;
+              onclick: (value) {
+                _email = value;
               },
               hint: 'ايميلك يا الطيب ',
               icon: Icons.email_sharp,
@@ -39,8 +40,8 @@ class SignupScreen extends StatelessWidget {
             //   height: hight * .0,
             // ),
             Ktextfielad(
-              onclick: (value){
-                _password=value;
+              onclick: (value) {
+                _password = value;
               },
               hint: 'الباسورد لو سمحت',
               icon: Icons.lock_sharp,
@@ -54,27 +55,36 @@ class SignupScreen extends StatelessWidget {
               ),
 
               // ignore: deprecated_member_use
-              child: FlatButton(
-                height: hight * .08,
-                onPressed: () async{
-                  
-                  if(_globalKey.currentState.validate()){
-                    _globalKey.currentState.save();
-                    print(_email);
-                    print(_password);
-                    final authResult =await _auth.SignUP(_email,_password);
-
-                  }
-                },
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                child: Text(
-                  'تسجيل',
-                  style: TextStyle(
-                      color: KmainColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30),
+              child: Builder(
+                 // ignore: deprecated_member_use
+                builder:(context) => FlatButton(
+                  height: hight * .08,
+                  onPressed: () async {
+                    if (_globalKey.currentState.validate()) {
+                      _globalKey.currentState.save();
+                      print(_email);
+                      print(_password);
+                      try {
+                        final authResult = await _auth.SignUP(_email, _password);
+                        Navigator.pushNamed(context, LoginScreen.id);
+                      }catch (e) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          duration: Duration(seconds: 5),
+                          content: Text(e.message),
+                        ));
+                      }
+                    }
+                  },
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Text(
+                    'تسجيل',
+                    style: TextStyle(
+                        color: KmainColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30),
+                  ),
                 ),
               ),
             ),
@@ -93,7 +103,9 @@ class SignupScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
-                SizedBox(width: width*.02,),
+                SizedBox(
+                  width: width * .02,
+                ),
                 Text(
                   'يوجد حساب لديك ؟ ',
                   style: TextStyle(color: Colors.blueGrey, fontSize: 16),
