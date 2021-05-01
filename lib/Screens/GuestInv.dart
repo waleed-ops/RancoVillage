@@ -5,7 +5,7 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 class GuestInavation extends StatelessWidget {
   static String id = 'GuestInavation';
-
+  DateTime _dateTime;
   @override
   Widget build(BuildContext context) {
     double hight = MediaQuery.of(context).size.height;
@@ -35,21 +35,26 @@ class GuestInavation extends StatelessWidget {
             SizedBox(
               height: hight * .09,
             ),
-        TextButton(
-            onPressed: () {
-              DatePicker.showDatePicker(context,
-                  showTitleActions: true,
-                  minTime: DateTime(2018, 3, 5),
-                  maxTime: DateTime(201, 6, 7), onChanged: (date) {
-                    print('change $date');
-                  }, onConfirm: (date) {
-                    print('confirm $date');
-                  }, currentTime: DateTime.now(), locale: LocaleType.zh);
-            },
-            child: Text(
-              'show date time picker (Chinese)',
-              style: TextStyle(color: Colors.blue),
-            ))
+            // ignore: deprecated_member_use
+            FlatButton(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                onPressed: () {
+                  DatePicker.showDatePicker(context,
+                      minTime: DateTime.now(),
+                      maxTime: DateTime(2111, 6, 7),
+                  //     {
+                  //   print('change $date');
+                  // }, onConfirm: (date) {
+                  //   print('confirm $date');
+                  // },
+                  currentTime: DateTime.now(), locale: LocaleType.en);
+                },
+                child: Text(
+                  'Pick A date',
+                  style: TextStyle(color: Colors.blue),
+                ))
 
           ],
         ),

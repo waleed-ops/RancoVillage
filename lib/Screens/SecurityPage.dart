@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce123/Screens/LoginPage.dart';
-import 'package:flutter_ecommerce123/Screens/SecurityPage.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
-import '../commoncode/Widgets.dart';
-class HomePage extends StatelessWidget {
-  static String id = 'HomePage';
-
+import 'package:flutter_ecommerce123/commoncode/Widgets.dart';
+class SecurityPage extends StatelessWidget {
+  static String id ='security';
   @override
   Widget build(BuildContext context) {
     double hight = MediaQuery.of(context).size.height;
@@ -18,15 +15,15 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: hight * .05,
             ),
-            ReButton(hight: hight,text: 'Resident ',navigator: LoginScreen.id,colour: Colors.white,),
+            ReButton(hight: hight,text:'pending',colour: Colors.amber),
             SizedBox(
               height: hight * .01,
             ),
-            ReButton(hight: hight,text: 'Security ',navigator: SecurityPage.id,colour: Colors.white,),
+            ReButton(hight: hight,text: 'accepted',colour: Colors.green),
             SizedBox(
               height: hight * .01,
             ),
-            ReButton(hight: hight,text: 'maintenance',colour: Colors.white,),
+            ReButton(hight: hight,text: 'rejected',colour: Colors.red),
           ],
         ),
       ),

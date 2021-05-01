@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_ecommerce123/Screens/LoginPage.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
 import 'package:flutter_ecommerce123/services/Auth.dart';
@@ -100,7 +99,7 @@ class SignupScreen extends StatelessWidget {
                   },
                   child: Text(
                     'Already have account?',
-                    style: TextStyle(color: Colors.blueGrey, fontSize: 19),
+                    style: TextStyle(color: Colors.blueGrey, fontSize: 22),
 
                   ),
                 ),

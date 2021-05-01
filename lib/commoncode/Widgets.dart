@@ -88,7 +88,8 @@ class ReButton extends StatelessWidget {
   final String text;
   final double hight;
   final String navigator;
-  ReButton ({@required this.hight,@required this.text,@required this.navigator});
+  final Color colour;
+  ReButton ({@required this.hight,@required this.text,@required this.navigator,this.colour});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -99,7 +100,7 @@ class ReButton extends StatelessWidget {
         onPressed: (){
           Navigator.pushNamed(context, navigator);
         },
-        color: Colors.white,
+        color: colour,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
         child: Text(

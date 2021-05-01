@@ -18,11 +18,11 @@ class ResidentsPage extends StatelessWidget {
             SizedBox(
               height: hight * .09,
             ),
-            ReButton(hight: hight,text: 'Guest Invitation ',navigator: GuestInavation.id,),
+            ReButton(hight: hight,text: 'Guest Invitation ',navigator: GuestInavation.id,colour: Colors.white),
             SizedBox(
               height: hight * .01,
             ),
-            ReButton(hight: hight,text: 'maintenance request',),
+            ReButton(hight: hight,text: 'maintenance request',colour: Colors.white),
             // SizedBox(
             //   height: hight * .01,
             // ),
