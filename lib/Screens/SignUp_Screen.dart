@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_ecommerce123/Screens/LoginPage.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
 import 'package:flutter_ecommerce123/services/Auth.dart';
-import 'Widgets.dart';
+import '../commoncode/Widgets.dart';
 
 class SignupScreen extends StatelessWidget {
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
@@ -26,14 +26,14 @@ class SignupScreen extends StatelessWidget {
             //   padding: EdgeInsets.only(top: hight * .29),
             // ),
             Ktextfielad(
-              hint: 'الاسم الكريم',
+              hint: 'Name',
               icon: Icons.person,
             ),
             Ktextfielad(
               onclick: (value) {
                 _email = value;
               },
-              hint: 'ايميلك يا الطيب ',
+              hint: 'Email ',
               icon: Icons.email_sharp,
             ),
             // SizedBox(
@@ -43,7 +43,7 @@ class SignupScreen extends StatelessWidget {
               onclick: (value) {
                 _password = value;
               },
-              hint: 'الباسورد لو سمحت',
+              hint: 'Password',
               icon: Icons.lock_sharp,
             ),
             SizedBox(
@@ -79,7 +79,7 @@ class SignupScreen extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
                   child: Text(
-                    'تسجيل',
+                    'Sign Up',
                     style: TextStyle(
                         color: KmainColor,
                         fontWeight: FontWeight.bold,
@@ -99,16 +99,17 @@ class SignupScreen extends StatelessWidget {
                     Navigator.pushNamed(context, LoginScreen.id);
                   },
                   child: Text(
-                    'دخول',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    'Already have account?',
+                    style: TextStyle(color: Colors.blueGrey, fontSize: 19),
+
                   ),
                 ),
                 SizedBox(
                   width: width * .02,
                 ),
                 Text(
-                  'يوجد حساب لديك ؟ ',
-                  style: TextStyle(color: Colors.blueGrey, fontSize: 16),
+                  'sign in',
+                  style: TextStyle(color: Colors.white, fontSize: 24),
                 ),
               ],
             )

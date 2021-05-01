@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce123/Screens/ResidentsPage.dart';
 import 'package:flutter_ecommerce123/Screens/SignUp_Screen.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
 import 'package:flutter/widgets.dart';
 import 'SignUp_Screen.dart';
-import 'Widgets.dart';
+import '../commoncode/Widgets.dart';
 import 'package:flutter_ecommerce123/services/Auth.dart';
-import '';
 class LoginScreen extends StatelessWidget {
   static String id = 'MainScreen';
   final GlobalKey<FormState> _globalKey=GlobalKey<FormState>();
@@ -15,7 +15,6 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double hight = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: KmainColor,
       body: Form(
@@ -27,7 +26,7 @@ class LoginScreen extends StatelessWidget {
               onclick: (value){
                 _email=value;
               },
-              hint: 'ايميلك يا الطيب ',
+              hint: 'Email ',
               icon: Icons.email_sharp,
             ),
             // SizedBox(
@@ -37,8 +36,9 @@ class LoginScreen extends StatelessWidget {
               onclick: (value){
                 _password=value;
               },
-              hint: 'الباسورد لو سمحت',
+              hint: 'Password',
               icon: Icons.lock_sharp,
+
             ),
             SizedBox(
               height: hight * .09,
@@ -58,7 +58,7 @@ class LoginScreen extends StatelessWidget {
 
                     try {
                       final authResult = await _auth.SignIn(_email, _password);
-                      Navigator.pushNamed(context, LoginScreen.id);
+                      Navigator.pushNamed(context, ResidentsPage.id);
                     }catch(e){
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         duration: Duration(seconds: 5),
@@ -74,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 child: Text(
-                  'دخول',
+                  'Log in',
                   style: TextStyle(
                       color: KmainColor,
                       fontWeight: FontWeight.bold,
@@ -93,13 +93,13 @@ class LoginScreen extends StatelessWidget {
                     Navigator.pushNamed(context, SignupScreen.id);
                   },
                   child: Text(
-                    'تسجيل',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    'You don\'t have ?',
+                    style: TextStyle(color: Colors.blueGrey, fontSize: 20),
                   ),
                 ),
                 Text(
-                  'لا يوجد حساب لديك ؟',
-                  style: TextStyle(color: Colors.blueGrey, fontSize: 16),
+                  'Account ',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ],
             )
