@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce123/commoncode/Widgets.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
@@ -15,6 +17,7 @@ class GuestInavation extends StatelessWidget {
       body: Form(
         child: ListView(
           children: [
+            SizedBox(height: hight * .11),
             Ktextfielad(
               hint: 'Guest Name ',
               icon: Icons.person,
@@ -32,30 +35,38 @@ class GuestInavation extends StatelessWidget {
               hint: 'Unit Number ',
               icon: Icons.home,
             ),
-            SizedBox(
-              height: hight * .09,
-            ),
+            // SizedBox(
+            //   height: hight * .0,
+            // ),
             // ignore: deprecated_member_use
-            FlatButton(
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                onPressed: () {
-                  DatePicker.showDatePicker(context,
-                      minTime: DateTime.now(),
-                      maxTime: DateTime(2111, 6, 7),
-                  //     {
-                  //   print('change $date');
-                  // }, onConfirm: (date) {
-                  //   print('confirm $date');
-                  // },
-                  currentTime: DateTime.now(), locale: LocaleType.en);
-                },
-                child: Text(
-                  'Pick A date',
-                  style: TextStyle(color: Colors.blue),
-                ))
-
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              // ignore: deprecated_member_use
+              child: FlatButton(
+                  height: hight * .06,
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),),
+                  onPressed: () {
+                    DatePicker.showDateTimePicker(context,
+                        minTime: DateTime.now(),
+                        maxTime: DateTime.utc(2111,12,31,),
+                    //     {
+                    //   print('change $date');
+                    // }, onConfirm: (date) {
+                    //   print('confirm $date');
+                    // },
+                    currentTime: DateTime.now(), locale: LocaleType.en);
+                  },
+                  child: Text(
+                    'Pick A date',
+                    style: TextStyle(fontSize: 22,color:KmainColor),
+                  )),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: ReButton(hight: hight,text: 'Submit ',colour: Colors.white,),
+            ),
           ],
         ),
       ),
