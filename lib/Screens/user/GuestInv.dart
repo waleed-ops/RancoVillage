@@ -67,6 +67,7 @@ class GuestInavation extends StatelessWidget {
               padding: const EdgeInsets.all(30.0),
               child: ReButton(hight: hight,text: 'Submit ',colour: Colors.white,),
             ),
+
           ],
         ),
       ),

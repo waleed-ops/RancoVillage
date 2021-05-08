@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce123/Screens/ResidentsPage.dart';
-import 'package:flutter_ecommerce123/Screens/SignUp_Screen.dart';
+import 'package:flutter_ecommerce123/Screens/user/ResidentsPage.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
 import 'package:flutter/widgets.dart';
-import 'SignUp_Screen.dart';
-import '../commoncode/Widgets.dart';
+import 'guist_SignUp_Screen.dart';
+import '../../commoncode/Widgets.dart';
 import 'package:flutter_ecommerce123/services/Auth.dart';
 class LoginScreen extends StatelessWidget {
   static String id = 'MainScreen';

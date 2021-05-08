@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce123/Screens/LoginPage.dart';
-import 'package:flutter_ecommerce123/Screens/SecurityPage.dart';
+import 'file:///C:/Users/wkald/AndroidStudioProjects/flutter_ecommerce123/lib/Screens/security/SecurityPage.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
 import '../commoncode/Widgets.dart';
+import 'user/guist_LoginPage.dart';
 class HomePage extends StatelessWidget {
   static String id = 'HomePage';
 

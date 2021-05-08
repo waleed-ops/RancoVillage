@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce123/Screens/LoginPage.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
 import 'package:flutter_ecommerce123/services/Auth.dart';
-import '../commoncode/Widgets.dart';
+import '../../commoncode/Widgets.dart';
+import 'guist_LoginPage.dart';
 
 class SignupScreen extends StatelessWidget {
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();

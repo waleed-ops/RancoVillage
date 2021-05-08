@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce123/Screens/GuestInv.dart';
+import 'file:///C:/Users/wkald/AndroidStudioProjects/flutter_ecommerce123/lib/Screens/user/GuestInv.dart';
+import 'file:///C:/Users/wkald/AndroidStudioProjects/flutter_ecommerce123/lib/Screens/user/maintainceReq.dart';
 import 'package:flutter_ecommerce123/commoncode/Widgets.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
 class ResidentsPage extends StatelessWidget {
@@ -22,7 +23,7 @@ class ResidentsPage extends StatelessWidget {
             SizedBox(
               height: hight * .01,
             ),
-            ReButton(hight: hight,text: 'maintenance request',colour: Colors.white),
+            ReButton(hight: hight,text: 'maintenance request',colour: Colors.white,navigator: MaintainceRequest.id,),
             // SizedBox(
             //   height: hight * .01,
             // ),
