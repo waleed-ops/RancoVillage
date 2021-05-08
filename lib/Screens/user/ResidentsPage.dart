@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/wkald/AndroidStudioProjects/flutter_ecommerce123/lib/Screens/user/GuestInv.dart';
-import 'file:///C:/Users/wkald/AndroidStudioProjects/flutter_ecommerce123/lib/Screens/user/maintainceReq.dart';
 import 'package:flutter_ecommerce123/commoncode/Widgets.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
+
+import 'GuestInv.dart';
+import 'maintainceReq.dart';
 class ResidentsPage extends StatelessWidget {
   static String id = 'ResidentsPage';
 
