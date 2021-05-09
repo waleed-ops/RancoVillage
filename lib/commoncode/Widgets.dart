@@ -114,3 +114,57 @@ class ReButton extends StatelessWidget {
     );
   }
 }
+class NlistView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        NListTile(),
+        NListTile(),
+        NListTile(),
+        NListTile(),
+        NListTile(),
+        NListTile(),
+
+      ],
+    );
+  }
+}
+
+class NListTile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          'Service',
+          style: TextStyle(fontSize: 21, color: KmainColor,fontWeight: FontWeight.bold),
+        ),
+      ),
+      trailing: KCheckBox(),
+    );
+  }
+}
+
+class KCheckBox extends StatefulWidget {
+  @override
+  _KCheckBoxState createState() => _KCheckBoxState();
+}
+
+class _KCheckBoxState extends State<KCheckBox> {
+  bool isChecked =false;
+  @override
+  Widget build(BuildContext context) {
+    return Checkbox(
+      activeColor: KmainColor
+      ,value:isChecked,
+      onChanged: (newValue){
+        setState(() {
+          isChecked=newValue;
+
+        });
+      },
+    );
+  }
+}

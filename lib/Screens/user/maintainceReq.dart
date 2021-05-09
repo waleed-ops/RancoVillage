@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
-
+import 'package:flutter_ecommerce123/commoncode/Widgets.dart';
 class MaintainceRequest extends StatelessWidget {
   static String id = 'MaintainceRequest';
   @override
@@ -9,8 +9,7 @@ class MaintainceRequest extends StatelessWidget {
 
     // TODO: give function to the checkbox
     return Scaffold(
-      backgroundColor:KmainColor,
-
+      backgroundColor: KmainColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -48,17 +47,15 @@ class MaintainceRequest extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20.0),
                   topRight: Radius.circular(20.0),
-
                 ),
               ),
-            child: ListView(children:[ ListTile(title: Text( 'Service',style:TextStyle(fontSize: 29,color:KmainColor),),trailing: Checkbox(value: false,),),],),
+              child: NlistView(),
             ),
           ),
         ],
@@ -66,3 +63,4 @@ class MaintainceRequest extends StatelessWidget {
     );
   }
 }
+
