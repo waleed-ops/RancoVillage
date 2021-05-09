@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce123/Screens/security/accepted.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
 import 'package:flutter_ecommerce123/commoncode/Widgets.dart';
 class SecurityPage extends StatelessWidget {
@@ -19,7 +20,7 @@ class SecurityPage extends StatelessWidget {
             SizedBox(
               height: hight * .01,
             ),
-            ReButton(hight: hight,text: 'accepted',colour: Colors.green),
+            ReButton(hight: hight,text: 'accepted',colour: Colors.green,navigator: Accepted.id,),
             SizedBox(
               height: hight * .01,
             ),

@@ -47,7 +47,7 @@ class MaintainceRequest extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -56,7 +56,10 @@ class MaintainceRequest extends StatelessWidget {
                 ),
               ),
               child: NlistView(),
+
             ),
+
+
           ),
         ],
       ),

@@ -2,48 +2,51 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
 
 class Ktextfielad extends StatelessWidget {
-  final  String hint;
+  final String hint;
   final IconData icon;
   final Function onclick;
-  String errorMSG (String str)
-  {
-    switch (hint){
-      case 'Name' :return 'user name is empty ! ';
-      case 'Email ' :return 'Email is Empty!';
-      case 'Password' :return 'Password is empty!';
-
+  String errorMSG(String str) {
+    switch (hint) {
+      case 'Name':
+        return 'user name is empty ! ';
+      case 'Email ':
+        return 'Email is Empty!';
+      case 'Password':
+        return 'Password is empty!';
     }
   }
-  Ktextfielad({@required this.onclick,@required this.hint,@required this.icon});
+
+  Ktextfielad(
+      {@required this.onclick, @required this.hint, @required this.icon});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.all(10.0),
-
+      padding: EdgeInsets.all(10.0),
       child: TextFormField(
-        validator: (value){
-          if(value.isEmpty){
+        validator: (value) {
+          if (value.isEmpty) {
             return errorMSG(hint);
           }
         },
         onSaved: onclick,
-        obscureText: hint=='Password'?true:false,
-keyboardType: TextInputType.emailAddress,
+        obscureText: hint == 'Password' ? true : false,
+        keyboardType: TextInputType.emailAddress,
         style: TextStyle(color: KmainColor),
         cursorColor: KmainColor,
-        decoration:InputDecoration(
-          prefixIcon: Icon(icon,color: KmainColor,)
-          ,
+        decoration: InputDecoration(
+          prefixIcon: Icon(
+            icon,
+            color: KmainColor,
+          ),
           hintText: hint,
           filled: true,
           fillColor: Colors.white,
           enabledBorder: OutlineInputBorder(
-
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(color: KmainColor),
           ),
-          focusedBorder:  OutlineInputBorder(
+          focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(color: KmainColor),
           ),
@@ -77,19 +80,23 @@ class ReImage extends StatelessWidget {
             Image.asset(
               'Images/Icons/Bmart.png',
             ),
-
           ],
         ),
       ),
     );
   }
 }
+
 class ReButton extends StatelessWidget {
   final String text;
   final double hight;
   final String navigator;
   final Color colour;
-  ReButton ({@required this.hight,@required this.text,@required this.navigator,this.colour});
+  ReButton(
+      {@required this.hight,
+      @required this.text,
+      @required this.navigator,
+      this.colour});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -97,23 +104,21 @@ class ReButton extends StatelessWidget {
       // ignore: deprecated_member_use
       child: FlatButton(
         height: hight * .08,
-        onPressed: (){
+        onPressed: () {
           Navigator.pushNamed(context, navigator);
         },
         color: colour,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Text(
           text,
           style: TextStyle(
-              color: KmainColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 30),
+              color: KmainColor, fontWeight: FontWeight.bold, fontSize: 30),
         ),
       ),
     );
   }
 }
+
 class NlistView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -125,7 +130,13 @@ class NlistView extends StatelessWidget {
         NListTile(),
         NListTile(),
         NListTile(),
-
+        NListTile(),
+        NListTile(),
+        NListTile(),
+        Ktextfielad(
+          hint: 'note & additional information ',
+          icon: Icons.note_outlined,
+        ),
       ],
     );
   }
@@ -139,7 +150,8 @@ class NListTile extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Text(
           'Service',
-          style: TextStyle(fontSize: 21, color: KmainColor,fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontSize: 21, color: KmainColor, fontWeight: FontWeight.bold),
         ),
       ),
       trailing: KCheckBox(),
@@ -153,16 +165,15 @@ class KCheckBox extends StatefulWidget {
 }
 
 class _KCheckBoxState extends State<KCheckBox> {
-  bool isChecked =false;
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Checkbox(
-      activeColor: KmainColor
-      ,value:isChecked,
-      onChanged: (newValue){
+      activeColor: KmainColor,
+      value: isChecked,
+      onChanged: (newValue) {
         setState(() {
-          isChecked=newValue;
-
+          isChecked = newValue;
         });
       },
     );

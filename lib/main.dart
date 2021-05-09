@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce123/Screens/security/accepted.dart';
 import 'Screens/security/SecurityPage.dart';
 import 'Screens/security/pending request.dart';
 import 'Screens/user/GuestInv.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       //   MainScreen.id:(context) => MainScreen()
       // },
       routes: {
+        Accepted.id:(context)=> Accepted (),
         PendingRequests.id:(context)=> SecurityPage (),
         SecurityPage.id:(context)=> SecurityPage (),
         ResidentsPage.id:(context)=> ResidentsPage (),
