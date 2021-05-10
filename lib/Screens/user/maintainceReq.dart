@@ -7,46 +7,48 @@ class MaintainceRequest extends StatelessWidget {
   Widget build(BuildContext context) {
     double hight = MediaQuery.of(context).size.height;
 
-    // TODO: give function to the checkbox
     return Scaffold(
       backgroundColor: KmainColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
-            padding: EdgeInsets.only(
-                top: 20.0, left: 30.0, right: 30.0, bottom: 30.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Icon(
-                  Icons.list,
-                  size: 30.0,
-                  color: KmainColor,
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  'Maintenance ',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 40.0,
-                    fontWeight: FontWeight.w700,
+          SafeArea(
+            child: Container(
+              padding: EdgeInsets.only(
+                  top: 20.0, left: 28.0, right: 30.0, bottom: 30.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  // Icon(
+                  //   Icons.list,
+                  //   size: 30.0,
+                  //   color: Colors.white,
+                  // ),
+                  // SizedBox(
+                  //   height: 10.0,
+
+                  Text(
+                    'Maintenance ',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40.0,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                ),
-                Text(
-                  'request',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
+                  Text(
+                    'request',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                    ),
                   ),
-                ),
-              ],
+                  
+                ],
+              ),
             ),
           ),
           Expanded(
-            child: Container(
+            child : Container(
               padding: EdgeInsets.symmetric(horizontal: 10.0),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -57,8 +59,8 @@ class MaintainceRequest extends StatelessWidget {
               ),
               child: NlistView(),
 
-            ),
 
+            ),
 
           ),
         ],

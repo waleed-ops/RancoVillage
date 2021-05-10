@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce123/Screens/security/accepted.dart';
 import 'package:flutter_ecommerce123/Screens/security/rejected.dart';
+import 'Screens/MaintaiceDep/DepHomeScreen.dart';
 import 'Screens/security/SecurityPage.dart';
 import 'Screens/security/pending request.dart';
 import 'Screens/user/GuestInv.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         SignupScreen.id: (context) => SignupScreen(),
         MaintainceRequest.id:(context)=>MaintainceRequest(),
         Rejected.id:(context)=>Rejected(),
+        DepHomeScreen.id:(context)=>DepHomeScreen(),
       },
     );
   }

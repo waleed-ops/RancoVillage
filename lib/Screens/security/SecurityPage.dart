@@ -7,6 +7,7 @@ class SecurityPage extends StatelessWidget {
   static String id ='security';
   @override
   Widget build(BuildContext context) {
+
     double hight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: KmainColor,

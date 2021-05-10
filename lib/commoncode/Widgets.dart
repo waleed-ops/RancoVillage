@@ -92,11 +92,13 @@ class ReButton extends StatelessWidget {
   final double hight;
   final String navigator;
   final Color colour;
+  final Color TColor;
   ReButton(
       {@required this.hight,
       @required this.text,
       @required this.navigator,
-      this.colour});
+      @required this.colour=Colors.white
+      ,@required this.TColor=KmainColor});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -112,7 +114,7 @@ class ReButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-              color: KmainColor, fontWeight: FontWeight.bold, fontSize: 30),
+              color: TColor, fontWeight: FontWeight.bold, fontSize: 30),
         ),
       ),
     );
@@ -122,6 +124,8 @@ class ReButton extends StatelessWidget {
 class NlistView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double hight = MediaQuery.of(context).size.height;
+
     return ListView(
       children: [
         NListTile(),
@@ -136,6 +140,11 @@ class NlistView extends StatelessWidget {
         Ktextfielad(
           hint: 'note & additional information ',
           icon: Icons.note_outlined,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          // ignore: deprecated_member_use
+          child: ReButton(hight: hight,text: 'accepted',colour: KmainColor,TColor: Colors.white,),
         ),
       ],
     );

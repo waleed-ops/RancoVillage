@@ -3,6 +3,7 @@ import 'package:flutter_ecommerce123/Screens/security/SecurityPage.dart';
 import 'package:flutter_ecommerce123/commoncode/const.dart';
 import '../commoncode/Widgets.dart';
 import 'user/guist_LoginPage.dart';
+import 'MaintaiceDep/DepHomeScreen.dart';
 class HomePage extends StatelessWidget {
   static String id = 'HomePage';
 
@@ -18,15 +19,15 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: hight * .05,
             ),
-            ReButton(hight: hight,text: 'Resident ',navigator: LoginScreen.id,colour: Colors.white,),
+            ReButton(hight: hight,text: 'Resident ',navigator: LoginScreen.id,),
             SizedBox(
               height: hight * .01,
             ),
-            ReButton(hight: hight,text: 'Security ',navigator: SecurityPage.id,colour: Colors.white,),
+            ReButton(hight: hight,text: 'Security ',navigator: SecurityPage.id,),
             SizedBox(
               height: hight * .01,
             ),
-            ReButton(hight: hight,text: 'maintenance',colour: Colors.white,),
+            ReButton(hight: hight,text: 'maintenance',navigator: DepHomeScreen.id,),
           ],
         ),
       ),
