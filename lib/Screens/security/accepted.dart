@@ -38,11 +38,11 @@ class _AcceptedState extends State<Accepted> {
             children: _items.map((MyItem item){
               return ExpansionPanel(
                   headerBuilder: (BuildContext context  ,bool isExpanded){
-                    return Text(item.header);
+                    return Text(item.header,style: TextStyle(color: Colors.green,fontSize: 20));
                   },
                   isExpanded:item.isExpanded,
                 body: Container(
-                  child: Text(item.body)
+                  child: Text(item.body,style: TextStyle(fontWeight: FontWeight.bold,color:Colors.green,fontSize: 18),)
                 ),
               );
             }).toList(),
